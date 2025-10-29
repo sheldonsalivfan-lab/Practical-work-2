@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Bloom College - Student Registration</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border: 2px solid #333;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-title {
+            text-align: center;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .section-title {
+            text-align: center;
+            font-weight: bold;
+            margin: 30px 0 20px 0;
+            color: #333;
+        }
+        .form-label {
+            font-weight: 500;
+            color: #333;
+        }
+        .btn-custom {
+            background-color: #888;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            margin: 0 10px;
+        }
+        .btn-custom:hover {
+            background-color: #666;
+            color: white;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .image-note {
+            font-size: 0.85em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="form-title">BLOOM COLLEGE</h2>
+        <p class="form-subtitle">Student Registration From</p>
+        
+        <form id="registrationForm">
+            <div class="mb-3">
+                <label for="studentImage" class="form-label">Student Image:</label>
+        <input type="file" class="form-control" id="studentImage" accept="image/*">
+                <small class="image-note">(less than 5 MB)</small>
+            </div>
+
+            <div class="mb-3">
+                <label for="studentName" class="form-label">Student Name:</label>
+                <input type="text" class="form-control" id="studentName" placeholder="Full Name">
+            </div>
+
+            <div class="mb-3">
+                <label for="fatherName" class="form-label">Father's Name:</label>
+                <input type="text" class="form-control" id="fatherName" placeholder="Father's Full Name">
+            </div>
+
+            <div class="mb-3">
+                <label for="motherName" class="form-label">Mother's Name:</label>
+                <input type="text" class="form-control" id="motherName" placeholder="Mother's Full Name">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Gender:</label>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="Male">
+                        <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                        <label class="form-check-label" for="female">Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="dob" class="form-label">Date of Birth:</label>
+                <input type="date" class="form-control" id="dob">
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail:</label>
+                <input type="email" class="form-control" id="email" placeholder="email@example.com">
+            </div>
+
+            <div class="mb-3">
+                <label for="level" class="form-label">Level:</label>
+                <select class="form-select" id="level">
+                    <option value="PhD">PhD</option>
+                    <option value="Masters">Masters</option>
+                    <option value="Bachelor">Bachelor</option>
+                    <option value="Diploma">Diploma</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="department" class="form-label">Department:</label>
+                <select class="form-select" id="department">
+                    <option value="Computer Engineering">Computer Engineering</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Electronics Engineering">Electronics Engineering</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="mobile" class="form-label">Tel/Mobile:</label>
+                <input type="tel" class="form-control" id="mobile" placeholder="xxx-xxx-xxxx">
+            </div>
+
+            <h4 class="section-title">Address</h4>
+
+            <div class="mb-3">
+                <label for="state" class="form-label">State:</label>
+                <input type="text" class="form-control" id="state" placeholder="State">
+            </div>
+
+            <div class="mb-3">
+                <label for="city" class="form-label">City:</label>
+                <input type="text" class="form-control" id="city" placeholder="City">
+            </div>
+
+            <div class="mb-3">
+                <label for="postcode" class="form-label">Postcode:</label>
+                <input type="text" class="form-control" id="postcode" placeholder="Postcode">
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="btn btn-custom">Register</button>
+                <button type="reset" class="btn btn-custom">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Registration Successful</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Your details have been saved!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // i. onBlur event for all input fields
+    const inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]');
+inputs.forEach(input => {
+    input.addEventListener('blur', function() {
+        const trimmed = this.value.trim();
+        if (trimmed === "") {
+            this.style.borderColor = "red";
+            this.title = "❌ Required field";
+        } else {
+            this.style.borderColor = "green";
+            this.title = "✅ Looks good";
+        }
+        console.log(`Field ${this.id} lost focus. Value: ${this.value}`);
+    });
+
+    input.addEventListener('focus', function() {
+        this.style.borderColor = "";
+        this.title = "";
+    });
+});
+        // ii. onFocus event for email field
+        const emailField = document.getElementById('email');
+        emailField.addEventListener('focus', function() {
+            this.style.backgroundColor = '#ffffcc';
+            console.log('Email field focused');
+        });
+
+        emailField.addEventListener('blur', function() {
+            this.style.backgroundColor = '';
+        });
+
+        // iii. onChange event for name fields to convert to CAPS LOCK
+const studentName = document.getElementById('studentName');
+const fatherName = document.getElementById('fatherName');
+const motherName = document.getElementById('motherName');
+
+function convertToCaps(e) {
+    e.target.value = e.target.value.toUpperCase();
+}
+
+studentName.addEventListener('change', convertToCaps);
+fatherName.addEventListener('change', convertToCaps);
+motherName.addEventListener('change', convertToCaps);
+
+
+        // iv. Form submission with Bootstrap modal
+        const form = document.getElementById('registrationForm');
+        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show the success modal
+            successModal.show();
+            
+            // Optional: Log form data
+            console.log('Form submitted successfully');
+            console.log('Student Name:', studentName.value);
+            console.log('Father Name:', fatherName.value);
+            console.log('Mother Name:', motherName.value);
+            console.log('Email:', emailField.value);
+        });
+    </script>
+</body>
+</html>
